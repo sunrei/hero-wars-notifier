@@ -4,6 +4,7 @@
   "name": "Hero Wars Notifier",
   "description": "Уведомления об игровых событиях",
   "version": "1.0.0",
+  "author": "hero-wars.info",
 
   "icons": {
     "48": "assets/icons/icon-48-a.png"
