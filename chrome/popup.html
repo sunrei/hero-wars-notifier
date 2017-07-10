@@ -1,0 +1,225 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hero Wars Notifier - Options</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+            padding: 5px 0;
+            background: #201308;
+            color: #ffe5b5;
+            min-width: 300px;
+        }
+        .btn {
+            padding: 0;
+            margin: 0;
+            border: 0 none;
+            background: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .btn:hover {
+            filter: brightness(120%);
+            -webkit-filter: brightness(120%);
+            -moz-filter: brightness(120%);
+            -o-filter: brightness(120%);
+            -ms-filter: brightness(120%);
+        }
+        #action-buttons {
+            float: right;
+            margin-right: 10px;
+        }
+        h3 {
+            padding: 0 10px;
+        }
+        #settings {
+            font-size: 14px;
+            padding: 0 10px;
+        }
+        .form-group {
+        }
+        label {
+            display: block;
+            padding: 6px 4px;
+            cursor: pointer;
+            border-top: 1px solid #4A352E;
+            position: relative;
+        }
+        label:hover {
+            background-color: #3A2616;
+        }
+        label input,
+        label span {
+            vertical-align: middle;
+        }
+        label input {
+            position: absolute;
+            left: -100px;
+        }
+        label img {
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+        label .check {
+            display: none;
+            position: absolute;
+            left: 4px;
+            top: 7px;
+        }
+        label.active .check{
+            display: block;
+        }
+        button {
+            margin: 10px 0;
+        }
+        .text-center {
+            text-align: center;
+        }
+        #messages {
+            min-width: 300px;
+            max-height: 330px;
+            overflow: auto;
+            padding: 0 10px;
+        }
+        #empty{
+            height: 50px;
+            margin-top: 40px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .message {
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            margin-top: 6px;
+            padding: 4px 6px 4px 4px;
+            border: 1px solid #57420E;
+            background: #342214;
+            border-radius: 2px;
+            font-size: 14px;
+        }
+        .message:hover {
+            background: #453325;
+            border-color: #765D1A;
+        }
+        .icon-container {
+            margin-right: 6px;
+        }
+        .icon-container {
+            width: 60px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon-container img {
+            max-width: 60px;
+        }
+        .info-container {
+            flex: 1;
+        }
+        .info-time {
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+        .info-title {
+            margin-bottom: 6px;
+        }
+        .info-body {
+            word-break: break-all;
+        }
+        .ClanChat .info-time,
+        .ServerChat .info-time {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div id="action-buttons">
+    <button id="disconnect" title="Отключить" class="btn" style="display: none"><img width="36" src="assets/images/disconnect_button.png" /></button>
+    <button id="settings-toggle" title="Настройки" class="btn"><img width="36" src="assets/images/settings_button.png" /></button>
+</div>
+<h3 id="settings-title" style="display: none">Настройки</h3>
+<div id="settings" style="display: none">
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showClanChat" value="1" />
+            <span>Чат гильдии</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showServerChat" value="1" />
+            <span>Чат сервера</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showClanNewMember" value="1" />
+            <span>Новый участник гильдии</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showMail" value="1" />
+            <span>Почта</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showClanActivity" value="1" />
+            <span>Награды за активность гильдии</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showArenaDefence" value="1" />
+            <span>Успешная защита на арене</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showGrandDefence" value="1" />
+            <span>Успешная защита на гранд арене</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showArenaPlaceChanged" value="1" />
+            <span>Поражение на арене</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="28" />
+            <img src="assets/images/iconV.png" width="28" class="check" />
+            <input type="checkbox" name="showGrandPlaceChanged" value="1" />
+            <span>Поражение на гранд арене</span>
+        </label>
+    </div>
+</div>
+<h3 id="messages-title">Последние собщения</h3>
+<div id="messages">
+    <div id="empty">Еще не было сообщений</div>
+</div>
+<script src="assets/js/options.js"></script>
+</body>
+</html>

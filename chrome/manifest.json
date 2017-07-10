@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "Hero Wars Notifier",
+  "description": "Уведомления об игровых событиях",
+  "version": "1.0.0",
+
+  "icons": {
+    "48": "assets/icons/icon-48-a.png"
+  },
+  "browser_action": {
+    "default_icon": "assets/icons/icon-48-i.png",
+    "default_title": "Hero Wars Notifier",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://i-heroes-vk.nextersglobal.com/iframe/vkontakte/*"],
+      "all_frames" : true,
+      "js": ["assets/js/inject.js"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "notifications",
+    "*://i-heroes-vk.nextersglobal.com/*",
+    "*://pushd.nextersglobal.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "vendor/js/legacy.js",
+      "vendor/js/Pushd4ClientWar.js",
+      "background.js"
+    ]
+  }
+}
