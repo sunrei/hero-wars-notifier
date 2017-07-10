@@ -3,7 +3,7 @@
 
   "name": "Hero Wars Notifier",
   "description": "Уведомления об игровых событиях",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "hero-wars.info",
 
   "icons": {
@@ -23,9 +23,7 @@
   ],
   "permissions": [
     "storage",
-    "notifications",
-    "*://i-heroes-vk.nextersglobal.com/*",
-    "*://pushd.nextersglobal.com/*"
+    "notifications"
   ],
   "background": {
     "scripts": [
