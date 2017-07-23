@@ -40,7 +40,10 @@
         'showGrandDefence': true,
         'showArenaPlaceChanged': true,
         'showGrandPlaceChanged': true,
-        'showClanNewMember': false
+        'showClanNewMember': false,
+        'showClanDismissMember': false,
+        'showChallenge': false,
+        'showReplay': false
     };
 
     function save_settings() {

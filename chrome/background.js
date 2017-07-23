@@ -8,7 +8,10 @@ var hwn_settings = {
     'showGrandDefence': true,
     'showArenaPlaceChanged': true,
     'showGrandPlaceChanged': true,
-    'showClanNewMember': false
+    'showClanNewMember': false,
+    'showClanDismissMember': false,
+    'showChallenge': false,
+    'showReplay': false
 };
 var icon_inactive = "assets/icons/icon-48-i.png";
 var icon_active = "assets/icons/icon-48-a.png";
@@ -70,7 +73,10 @@ function processMessage(message) {
         'ClanActivity3':     'assets/images/runeBlue.png',
         'ClanActivity4':     'assets/images/runePurple.png',
         'DungeonActivity':   'assets/images/dungeonActivity.png',
-        'ClanNewMember':     'assets/images/clanNewMember.png'
+        'ClanNewMember':     'assets/images/clanNewMember.png',
+        'ClanDismissMember': 'assets/images/clanNewMember.png',
+        'Challenge':         'assets/images/challenge.png',
+        'Replay':            'assets/images/replay.png'
     };
 
     var type = '';
@@ -79,9 +85,20 @@ function processMessage(message) {
 
     switch (message.type) {
         case 'chatMessage':
-            type = (message.body.chatType == 'clan') ? 'ClanChat' : 'ServerChat';
-            title = message.body.user.name;
-            body = message.body.data.text;
+            if (message.body.messageType == 'challenge') {
+                type = 'Challenge';
+                title = message.body.user.name;
+                body = 'Вызов на бой';
+            } else if (message.body.messageType == 'replay') {
+                type = 'Replay';
+                title = message.body.user.name;
+                var href = 'https://vk.com/bestmoba#replay_id=' + message.body.data.replayId;
+                body = 'Запись боя ' + href;
+            } else {
+                type = (message.body.chatType == 'clan') ? 'ClanChat' : 'ServerChat';
+                title = message.body.user.name;
+                body = message.body.data.text;
+            }
             break;
         case 'newMail':
             switch (message.body.letter.type) {
@@ -127,6 +144,11 @@ function processMessage(message) {
             type = 'ClanNewMember';
             title = 'Новый участник гильдии';
             body = message.body.user.name + ' (id: ' + message.body.user.id + ')';
+            break;
+        case 'clanDismissMember':
+            type = 'ClanDismissMember';
+            title = 'Участник покидает гильдию';
+            body = '(id: ' + message.body.userId + ')';
             break;
         case 'clanDismissMember':
             return;

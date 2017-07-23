@@ -113,6 +113,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         .icon-container img {
             max-width: 60px;
@@ -131,6 +138,8 @@
             word-break: break-all;
         }
         .ClanChat .info-time,
+        .Challenge .info-time,
+        .Replay .info-time,
         .ServerChat .info-time {
             float: right;
         }
@@ -145,72 +154,96 @@
 <div id="settings" style="display: none">
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showClanChat" value="1" />
             <span>Чат гильдии</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
+            <input type="checkbox" name="showChallenge" value="1" />
+            <span>Вызов на бой</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
+            <input type="checkbox" name="showReplay" value="1" />
+            <span>Запись боя</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showServerChat" value="1" />
             <span>Чат сервера</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showClanNewMember" value="1" />
             <span>Новый участник гильдии</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
+            <input type="checkbox" name="showClanDismissMember" value="1" />
+            <span>Участник покидает гильдию</span>
+        </label>
+    </div>
+    <div class="form-group">
+        <label>
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showMail" value="1" />
             <span>Почта</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showClanActivity" value="1" />
             <span>Награды за активность гильдии</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showArenaDefence" value="1" />
             <span>Успешная защита на арене</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showGrandDefence" value="1" />
             <span>Успешная защита на гранд арене</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showArenaPlaceChanged" value="1" />
             <span>Поражение на арене</span>
         </label>
     </div>
     <div class="form-group">
         <label>
-            <img src="assets/images/boxV.png" width="28" />
-            <img src="assets/images/iconV.png" width="28" class="check" />
+            <img src="assets/images/boxV.png" width="24" />
+            <img src="assets/images/iconV.png" width="24" class="check" />
             <input type="checkbox" name="showGrandPlaceChanged" value="1" />
             <span>Поражение на гранд арене</span>
         </label>
